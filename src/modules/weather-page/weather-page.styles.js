@@ -4,8 +4,55 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    padding: 20,
+    paddingLeft: 20,
+    paddingTop:55,
     gap: 5
+  },
+  cityContainer:{
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    width: 160,
+    gap: 5
+  },
+  mayakImage: {
+    width: 37,
+    height:37
+  },
+  currentWeatherContainer: {
+    width: 363,
+    height: 168,
+    flexDirection: "row",
+    gap: 35
+  },
+  currentWeatherBody: {
+    width: 152,
+    height: 163
+  },
+  currentTemp: {
+    color: "white",
+    fontSize: 64
+  },
+  currentWeather: {
+    color: "#D1D4D8",
+    fontSize:24,
+  },
+  feelsLike: {
+    fontSize: 15,
+    color: "#A6B7CE"
+  },
+  currentMaxAndMinTemp: {
+    color: "#94A1B2",
+    fontSize: 15
+  },
+  imageCurrentWeather: {
+    width: 141,
+    height: 130
+  },
+  hourlyWeatherContainer: {
+    width: 343,
+    height: 90,
+  
   },
   image: {
     width: 50,
@@ -15,13 +62,9 @@ export const styles = StyleSheet.create({
     alignItems: "center"
   },
   cityName: {
-    fontSize:50,
-    color: "#373737ff"
-  },
-  cityContainer: {
-    width: "100%",
-    justifyContent: 'center',
-    alignItems: "center"
+    fontSize:40,
+    textAlign: "center",
+    color: "white"
   },
   currentCityTemp: {
     fontSize: 40,

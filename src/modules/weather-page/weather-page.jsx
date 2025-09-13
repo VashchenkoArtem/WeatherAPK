@@ -1,6 +1,6 @@
 import { useLocalSearchParams, router } from "expo-router";
 import { useEffect, useState } from "react"
-import {StyleSheet, View, Text, Image, TouchableOpacity} from "react-native"
+import {StyleSheet, View, Text, Image, TouchableOpacity, ImageBackground} from "react-native"
 import { ScrollView, capitalizeFirstLetter } from "react-native";
 import { styles } from "./weather-page.styles"
 
@@ -41,10 +41,36 @@ export function WeatherPage(){
     
     return(
         <View style = {styles.container}>
-            <TouchableOpacity style = {styles.goBack}>
-                <Text style = {styles.goBack} onPress={goBack}>Назад</Text>
-            </TouchableOpacity>
             <View style = {styles.cityContainer}>
+                <Image source = {require("../../shared/images/mayak.png")} style = {styles.mayakImage}/>
+                <Text style = {styles.cityName}>Dnipro</Text>
+            </View>
+            <View style = {styles.currentWeatherContainer}>
+                <View style = {styles.currentWeatherBody}>
+                    <Text style = {styles.currentTemp}>29°</Text>
+                    <Text style = {styles.currentWeather}>Mostly cloud</Text>
+                    <Text style = {styles.feelsLike}>Feels like 27°</Text>
+                    <Text style = {styles.currentMaxAndMinTemp}>22°↓ 31°↑</Text>
+                </View>
+                <Image style ={styles.imageCurrentWeather} source = {require("../../shared/images/example_weather.png")}></Image>
+            </View>
+            <ImageBackground style = {styles.hourlyWeatherContainer} source = {require("../../shared/images/backgrHourly.png")}>
+
+            </ImageBackground>
+            <View style = {styles.weeklyWeatherContainer}>
+
+            </View>
+            <View style = {styles.sunriseContainer}>
+                <Text>Sunrise</Text>
+                <Image style = {styles.sunImage} source = {require("../../shared/images/sunrise.png")}/>
+                <Text style = {styles.timeSun}>05:55</Text>
+            </View>
+            <View style = {styles.sunsetContainer}>
+                <Text style = {styles.sunsetText}>Sunset</Text>
+                <Image style = {styles.sunImage} source = {require("../../shared/images/sunset.png")}/>
+                <Text style  = {styles.timeSun}>21:55</Text>
+            </View>
+            {/* <View style = {styles.cityContainer}>
                 <Text style = {styles.cityName}>{params.cityName}</Text>
                 <Text style = {styles.currentCityTemp}>{Math.round(weatherData?.main.temp)}°C</Text>
                 <Image style = {styles.currentWeatherImage} source = {{
@@ -85,7 +111,7 @@ export function WeatherPage(){
                         </View>
                     )
                 })}
-            </ScrollView>
+            </ScrollView> */}
         </View>
     )
 }
